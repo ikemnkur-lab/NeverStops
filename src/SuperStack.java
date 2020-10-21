@@ -1,4 +1,5 @@
 
+@SuppressWarnings("unchecked")
 public class SuperStack<T> {
 
 	private T[] items;
@@ -9,18 +10,26 @@ public class SuperStack<T> {
 	}
 	
 	public boolean isEmpty() {
-		return true;
+		return top == 0;
 	}
 	
 	public boolean isFull() {
-		return true;
+		return top==items.length;
 	}
 	
 	public boolean push (T item) {
+		if (isFull())
+			return false;
+		
+		items[top] = item;	
 		return true;
 	}
 	
-	public T pop() {
-		
+	public T[] pop() {
+		if (isEmpty()) {
+			return null;
+		} else {
+			return false;
+		}
 	}
 }
